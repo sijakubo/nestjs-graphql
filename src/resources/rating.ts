@@ -2,12 +2,12 @@ import { Field, ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
 export class Rating {
-  @Field(() => String)
+  @Field()
   id: string;
 
-  @Field(() => String)
+  @Field()
   comment: string;
 
-  @Field(() => Number)
+  @Field()
   rating: number;
 }

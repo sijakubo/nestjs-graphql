@@ -29,6 +29,7 @@ export class RatingResolver {
     this.ratingRepository.data.push(createdRating);
 
     await pubSub.publish(this.topicRatingAdded, { ratingAdded: createdRating });
+    this.logger.debug(`published rating to topic ${this.topicRatingAdded}`, rating);
 
     return createdRating;
   }

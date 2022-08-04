@@ -26,7 +26,7 @@ mutation {
   createRating(
     rating: {
      cupcakeId:"2829feb2-6277-4ea9-8366-3d404446aa07",
-     comment: "💪",
+     comment: "great cupcake 💪",
      rating: 4
     }
   ) {
