@@ -3,7 +3,7 @@ import { Ingredient } from './ingredient';
 
 @ObjectType()
 export class Cupcake {
-  @Field(() => String)
+  @Field()
   id: string;
 
   @Field()
@@ -12,6 +12,6 @@ export class Cupcake {
   @Field({ nullable: true })
   stock?: number;
 
-  @Field(type => [Ingredient])
+  @Field(() => [Ingredient])
   ingredients: Ingredient[];
 }
