@@ -10,4 +10,7 @@ export class CreateRatingResource {
 
   @Field(() => Number)
   rating: number;
+
+  @Field({ nullable: true, defaultValue: new Date() })
+  createdAt?: Date;
 }

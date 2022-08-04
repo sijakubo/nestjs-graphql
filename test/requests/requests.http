@@ -19,7 +19,7 @@ mutation {
   }
 }
 
-###
+### Create Rating without createdAt
 GRAPHQL http://localhost:3000/graphql
 
 mutation {
@@ -30,7 +30,25 @@ mutation {
      rating: 4
     }
   ) {
-    comment
+    comment,
+    createdAt
+  }
+}
+
+### Create Rating with createdAt
+GRAPHQL http://localhost:3000/graphql
+
+mutation {
+  createRating(
+    rating: {
+     cupcakeId:"2829feb2-6277-4ea9-8366-3d404446aa07",
+     comment: "great cupcake 💪",
+     rating: 4,
+     createdAt: "2021-12-31T19:14:00Z"
+    }
+  ) {
+    comment,
+    createdAt
   }
 }
 

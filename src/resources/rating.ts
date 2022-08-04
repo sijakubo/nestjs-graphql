@@ -10,4 +10,7 @@ export class Rating {
 
   @Field()
   rating: number;
+
+  @Field()
+  createdAt: Date;
 }

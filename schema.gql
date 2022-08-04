@@ -14,6 +14,7 @@ input CreateIngredientResource {
 
 input CreateRatingResource {
   comment: String!
+  createdAt: DateTime = "2022-08-04T14:35:19.083Z"
   cupcakeId: String!
   rating: Float!
 }
@@ -24,6 +25,11 @@ type Cupcake {
   name: String!
   stock: Float
 }
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
 
 type Ingredient {
   id: String!
@@ -42,6 +48,7 @@ type Query {
 
 type Rating {
   comment: String!
+  createdAt: DateTime!
   id: String!
   rating: Float!
 }
