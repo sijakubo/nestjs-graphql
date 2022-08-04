@@ -1,0 +1,40 @@
+###
+GRAPHQL http://localhost:3000/graphql
+
+{cupcakes{ id, name, ingredients {name} }}
+
+###
+GRAPHQL http://localhost:3000/graphql
+
+mutation {
+  createCupcake(
+    cupcake: {
+      name: "Banana",
+      stock: 2,
+      ingredients: [{ name: "banana" }, { name: "flour" }]
+    }
+  ) {
+    name,
+    ingredients { name }
+  }
+}
+
+###
+GRAPHQL http://localhost:3000/graphql
+
+mutation {
+  createRating(
+    rating: {
+     cupcakeId:"2829feb2-6277-4ea9-8366-3d404446aa07",
+     comment: "💪",
+     rating: 4
+    }
+  ) {
+    comment
+  }
+}
+
+###
+GRAPHQL http://localhost:3000/graphql
+
+subscription {ratingAdded {comment, rating}}

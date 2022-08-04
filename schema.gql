@@ -1,0 +1,52 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Ingredient {
+  id: String!
+  name: String!
+}
+
+type Cupcake {
+  id: String!
+  name: String!
+  stock: Float
+  ingredients: [Ingredient!]!
+  ingredient: [Ingredient!]!
+}
+
+type Rating {
+  id: String!
+  comment: String!
+  rating: Float!
+}
+
+type Query {
+  cupcakes: [Cupcake!]!
+  cupcake(id: Int!): Cupcake!
+}
+
+type Mutation {
+  createCupcake(cupcake: CreateCupcakeResource!): Cupcake!
+  createRating(rating: CreateRatingResource!): Rating!
+}
+
+input CreateCupcakeResource {
+  name: String!
+  stock: Float
+  ingredients: [CreateIngredientResource!]!
+}
+
+input CreateIngredientResource {
+  name: String!
+}
+
+input CreateRatingResource {
+  cupcakeId: String!
+  comment: String!
+  rating: Float!
+}
+
+type Subscription {
+  ratingAdded: Rating!
+}
