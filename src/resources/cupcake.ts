@@ -12,6 +12,6 @@ export class Cupcake {
   @Field({ nullable: true })
   stock?: number;
 
-  @Field(() => [Ingredient])
+  @Field(type => [Ingredient])
   ingredients: Ingredient[];
 }

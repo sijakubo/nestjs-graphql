@@ -2,39 +2,10 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type Ingredient {
-  id: String!
-  name: String!
-}
-
-type Cupcake {
-  id: String!
-  name: String!
-  stock: Float
-  ingredients: [Ingredient!]!
-  ingredient: [Ingredient!]!
-}
-
-type Rating {
-  id: String!
-  comment: String!
-  rating: Float!
-}
-
-type Query {
-  cupcakes: [Cupcake!]!
-  cupcake(id: Int!): Cupcake!
-}
-
-type Mutation {
-  createCupcake(cupcake: CreateCupcakeResource!): Cupcake!
-  createRating(rating: CreateRatingResource!): Rating!
-}
-
 input CreateCupcakeResource {
+  ingredients: [CreateIngredientResource!]!
   name: String!
   stock: Float
-  ingredients: [CreateIngredientResource!]!
 }
 
 input CreateIngredientResource {
@@ -42,8 +13,36 @@ input CreateIngredientResource {
 }
 
 input CreateRatingResource {
-  cupcakeId: String!
   comment: String!
+  cupcakeId: String!
+  rating: Float!
+}
+
+type Cupcake {
+  id: String!
+  ingredients: [Ingredient!]!
+  name: String!
+  stock: Float
+}
+
+type Ingredient {
+  id: String!
+  name: String!
+}
+
+type Mutation {
+  createCupcake(cupcake: CreateCupcakeResource!): Cupcake!
+  createRating(rating: CreateRatingResource!): Rating!
+}
+
+type Query {
+  cupcake(id: Int!): Cupcake!
+  cupcakes: [Cupcake!]!
+}
+
+type Rating {
+  comment: String!
+  id: String!
   rating: Float!
 }
 

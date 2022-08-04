@@ -21,7 +21,7 @@ export class CupcakeResolver {
   }
 
   @ResolveField(() => [Ingredient])
-  async ingredient(@Parent() cupcake: Cupcake) {
+  async ingredients(@Parent() cupcake: Cupcake) {
     return this.cupcakeRepo.data.find(value => value.id === cupcake.id).ingredients;
   }
 

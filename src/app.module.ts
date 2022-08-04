@@ -13,6 +13,7 @@ import { RatingResolver } from './resolver/rating-resolver';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: 'schema.gql',
+      sortSchema: true,
       subscriptions: {
         'subscriptions-transport-ws': true
       },
